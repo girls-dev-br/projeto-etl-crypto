@@ -19,16 +19,16 @@ da API CoinGecko, transforma os dados e carrega em um mini Data Warehouse no Pos
 - Testes automatizados
 
 ## Estrutura do projeto
-
+```
 projeto-etl-crypto/
-├── sql/ # scripts de criação de tabelas e views
-├── src/ # código fonte do ETL
-├── tests/ # testes automatizados
-├── docs/ # documentação adicional
-├── config/ # configurações do projeto
+├── sql/            # scripts de criação de tabelas e views
+├── src/            # código fonte do ETL
+├── tests/          # testes automatizados
+├── docs/           # documentação adicional
+├── config/         # configurações do projeto
 ├── requirements.txt
-└── .env.exemplo # modelo de variáveis de ambiente
-
+└── .env.exemplo    # modelo de variáveis de ambiente
+```
 
 ## Como rodar o projeto
 
@@ -62,4 +62,4 @@ python src/main.py
 
 ## Autoras
 
-Projeto desenvolvido por [Bianca Pena, Paula Carvalho, Paula Cristine e Sara Trindade.]
+Projeto desenvolvido por Bianca Pena, Paula Carvalho, Paula Cristine e Sara Trindade.
