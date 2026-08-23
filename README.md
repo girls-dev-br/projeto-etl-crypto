@@ -1,7 +1,7 @@
 # ETL de Criptomoedas
 
 Pipeline de ETL (Extract, Transform, Load) que extrai dados de criptomoedas 
-da API CoinGecko, transforma os dados e carrega em um banco de dados SQL.
+da API CoinGecko, transforma os dados e carrega em um mini Data Warehouse no PostgreSQL.
 
 ## Tecnologias utilizadas
 
