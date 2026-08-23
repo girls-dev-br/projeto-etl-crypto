@@ -1,0 +1,67 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Página-1" id="SYWyxRn4DN0o2WoIFsfZ">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="UlCATa_zBqfv97s3_Vmm-10" edge="1" parent="1" source="1sisosok4kcTCKldKzNg-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="UlCATa_zBqfv97s3_Vmm-6" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UlCATa_zBqfv97s3_Vmm-27" edge="1" parent="1" source="1sisosok4kcTCKldKzNg-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="UlCATa_zBqfv97s3_Vmm-2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UlCATa_zBqfv97s3_Vmm-29" edge="1" parent="1" source="1sisosok4kcTCKldKzNg-1" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="UlCATa_zBqfv97s3_Vmm-1" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1sisosok4kcTCKldKzNg-1" parent="1" style="whiteSpace=wrap;html=1;aspect=fixed;" value="Bitcoin" vertex="1">
+          <mxGeometry height="80" width="80" x="-40" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="UlCATa_zBqfv97s3_Vmm-11" edge="1" parent="1" source="UlCATa_zBqfv97s3_Vmm-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="UlCATa_zBqfv97s3_Vmm-7" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UlCATa_zBqfv97s3_Vmm-17" edge="1" parent="1" source="UlCATa_zBqfv97s3_Vmm-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="UlCATa_zBqfv97s3_Vmm-14" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UlCATa_zBqfv97s3_Vmm-26" edge="1" parent="1" source="UlCATa_zBqfv97s3_Vmm-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="UlCATa_zBqfv97s3_Vmm-2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UlCATa_zBqfv97s3_Vmm-1" parent="1" style="whiteSpace=wrap;html=1;aspect=fixed;direction=west;" value="&amp;nbsp; &amp;nbsp;Ethereum&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;" vertex="1">
+          <mxGeometry height="80" width="80" x="110" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="UlCATa_zBqfv97s3_Vmm-2" parent="1" style="whiteSpace=wrap;html=1;aspect=fixed;" value="Criptomoedas" vertex="1">
+          <mxGeometry height="80" width="80" x="40" y="545" as="geometry" />
+        </mxCell>
+        <mxCell id="UlCATa_zBqfv97s3_Vmm-9" edge="1" parent="1" source="UlCATa_zBqfv97s3_Vmm-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="UlCATa_zBqfv97s3_Vmm-7" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UlCATa_zBqfv97s3_Vmm-6" parent="1" style="whiteSpace=wrap;html=1;aspect=fixed;" value="Real&amp;nbsp;&lt;div&gt;R$&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="80" x="-40" y="840" as="geometry" />
+        </mxCell>
+        <mxCell id="UlCATa_zBqfv97s3_Vmm-25" edge="1" parent="1" source="UlCATa_zBqfv97s3_Vmm-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="UlCATa_zBqfv97s3_Vmm-22" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UlCATa_zBqfv97s3_Vmm-7" parent="1" style="whiteSpace=wrap;html=1;aspect=fixed;" value="Dólar&lt;div&gt;USD&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="80" x="110" y="840" as="geometry" />
+        </mxCell>
+        <mxCell id="UlCATa_zBqfv97s3_Vmm-21" edge="1" parent="1" source="UlCATa_zBqfv97s3_Vmm-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="UlCATa_zBqfv97s3_Vmm-20" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UlCATa_zBqfv97s3_Vmm-14" parent="1" style="shape=cylinder;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;" value="banco de&lt;div&gt;dados&lt;/div&gt;" vertex="1">
+          <mxGeometry height="120" width="100" x="520" y="740" as="geometry" />
+        </mxCell>
+        <mxCell id="UlCATa_zBqfv97s3_Vmm-20" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Relatórios e&lt;div&gt;Dashboards&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="690" y="770" as="geometry" />
+        </mxCell>
+        <mxCell id="UlCATa_zBqfv97s3_Vmm-23" edge="1" parent="1" source="UlCATa_zBqfv97s3_Vmm-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="UlCATa_zBqfv97s3_Vmm-22" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="330" y="820" as="sourcePoint" />
+            <mxPoint x="490" y="820" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="UlCATa_zBqfv97s3_Vmm-22" parent="1" style="whiteSpace=wrap;html=1;aspect=fixed;" value="ETL" vertex="1">
+          <mxGeometry height="140" width="140" x="274" y="730" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
