@@ -32,6 +32,7 @@ CREATE TABLE IF NOT EXISTS fato_cotacoes (
     preco NUMERIC(18, 4) NOT NULL,
     market_cap NUMERIC(24, 2),
     volume_total NUMERIC(24, 2),
+    data_carga TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     CONSTRAINT fk_fato_tempo FOREIGN KEY (data_id) REFERENCES dim_tempo (data_id),
     CONSTRAINT fk_fato_moeda FOREIGN KEY (moeda_id) REFERENCES dim_moeda (moeda_id),
     CONSTRAINT fk_fato_fiat FOREIGN KEY (fiat_id) REFERENCES dim_fiat (fiat_id),
@@ -48,4 +49,5 @@ CREATE TABLE IF NOT EXISTS fato_projecoes (
     CONSTRAINT fk_proj_tempo FOREIGN KEY (data_projecao) REFERENCES dim_tempo (data_id),
     CONSTRAINT fk_proj_moeda FOREIGN KEY (moeda_id) REFERENCES dim_moeda (moeda_id),
     CONSTRAINT fk_proj_fiat FOREIGN KEY (fiat_id) REFERENCES dim_fiat (fiat_id)
+    CONSTRAINT unq_projecao_dia UNIQUE (data_projecao, moeda_id, fiat_id),
 );
