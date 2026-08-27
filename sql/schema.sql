@@ -1,3 +1,17 @@
+-- TABELA DE STAGE (Área temporária / Dados Brutos da API)
+
+CREATE TABLE IF NOT EXISTS stage_cotacoes (
+    stage_id SERIAL PRIMARY KEY,
+    moeda VARCHAR(50) NOT NULL,
+    moeda_fiat VARCHAR(10) NOT NULL,
+    timestamp_ms BIGINT NOT NULL,
+    data_referencia DATE,
+    preco NUMERIC(18, 8),
+    market_cap NUMERIC(24, 2),
+    volume_total NUMERIC(24, 2),
+    data_extracao TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
 -- TABELAS DIMENSÃO (Informações de cadastro e datas)
 
 CREATE TABLE IF NOT EXISTS dim_tempo (
