@@ -52,3 +52,18 @@ CREATE TABLE IF NOT EXISTS fato_projecoes (
     CONSTRAINT fk_proj_fiat FOREIGN KEY (fiat_id) REFERENCES dim_fiat (fiat_id)
     CONSTRAINT unq_projecao_dia UNIQUE (data_projecao, moeda_id, fiat_id),
 );
+
+CREATE TABLE IF NOT EXISTS rejected_stage_cotacoes (
+    rejeicao_id SERIAL PRIMARY KEY,
+    stage_id INT,
+    _run_id VARCHAR(50),
+    data_rejeicao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    motivo_rejeicao TEXT,
+    moeda TEXT,
+    moeda_fiat TEXT,
+    timestamp_ms TEXT,
+    data_referencia TEXT,
+    preco TEXT,
+    market_cap TEXT,
+    volume_total TEXT
+);
