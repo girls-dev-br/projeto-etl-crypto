@@ -63,10 +63,10 @@ python src/main.py
 ## 📸 Demonstração
 
 ### 1. Extração dos dados (staging)
-![Extração](./fotos-processo/extracao_bruta.jpeg)
+![Extração](./docs/fotos-processo/extracao_bruta.jpeg)
 Coleta dos dados brutos da API CoinGecko e carga incremental dos últimos 12 meses até 5 dias posteriores ao ínicio na tabela `stg_cotacoes` .
 
-![Extração](./fotos-processo/extracao_auto.jpeg)
+![Extração](./docs/fotos-processo/extracao_auto.jpeg)
 Coleta dos dados brutos da API CoinGecko e carga automatizada com agendador na tabela `stg_cotacoes`.
 
 
