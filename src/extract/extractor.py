@@ -42,7 +42,11 @@ print("🚀 Iniciando verificação de carga incremental...")
 SENHA_ENCODED = urllib.parse.quote_plus(SENHA_BANCO) if SENHA_BANCO else ""
 USUARIO_ENCODED = urllib.parse.quote_plus(USUARIO_BANCO) if USUARIO_BANCO else ""
 
-URL_CONEXAO = f"postgresql://{USUARIO_ENCODED}:{SENHA_ENCODED}@{HOST_BANCO}:{PORTA_BANCO}/{NOME_BANCO}?client_encoding=utf8"
+# Adicionados os parâmetros obrigatórios do Neon no final da URL
+URL_CONEXAO = (
+    f"postgresql://{USUARIO_ENCODED}:{SENHA_ENCODED}@{HOST_BANCO}:{PORTA_BANCO}/{NOME_BANCO}"
+    f"?client_encoding=utf8&sslmode=require&channel_binding=require"
+)
 
 engine = create_engine(
     URL_CONEXAO,
