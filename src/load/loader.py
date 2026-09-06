@@ -4,6 +4,8 @@ import pandas as pd
 from dotenv import load_dotenv
 from sqlalchemy import create_engine, text
 
+import urllib.parse
+
 load_dotenv()
 
 USUARIO = os.getenv("DB_USER")
@@ -12,7 +14,14 @@ HOST = os.getenv("DB_HOST", "localhost")
 PORTA = os.getenv("DB_PORT", "5432")
 BANCO = os.getenv("DB_NAME")
 
-URL_CONEXAO = f"postgresql://{USUARIO}:{SENHA}@{HOST}:{PORTA}/{BANCO}"
+USUARIO_ENCODED = urllib.parse.quote_plus(USUARIO) if USUARIO else ""
+SENHA_ENCODED = urllib.parse.quote_plus(SENHA) if SENHA else ""
+
+URL_CONEXAO = (
+    f"postgresql://{USUARIO_ENCODED}:{SENHA_ENCODED}@{HOST}:{PORTA}/{BANCO}"
+    f"?client_encoding=utf8&sslmode=require&channel_binding=require"
+)
+
 engine = create_engine(URL_CONEXAO)
 
 def carregar_dados_dw(df_validos, df_rejeitados=None):
