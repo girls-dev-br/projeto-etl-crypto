@@ -162,3 +162,96 @@ FROM cotacoes_mensais cm
 ORDER BY 
     cm.moeda_id, 
     ranking_pico_historico ASC;
+
+-- View 06 - Gera os 5 meses à frente automaticamente a partir da última data real disponível.
+-- Calcula a Projeção (Tendência) projetando o preço baseado no crescimento médio recente.
+-- Calcula a Média Móvel das Projeções para suavizar as estimativas futuras.
+-- Faz a Comparação Homóloga (Mês Atual x Mesmo Mês do Ano Anterior): compara o mês projetado
+-- (ex: Abril/2027) com o valor real do mesmo mês no ano anterior (Abril/2026).
+
+CREATE OR REPLACE VIEW vw_projecao_futura_completa AS
+WITH historico_mensal AS (
+    -- 1. Agrupa os valores reais históricos mês a mês por moeda
+    SELECT 
+        DATE_TRUNC('month', f.data_id)::DATE AS mes,
+        f.moeda_id,
+        f.fiat_id,
+        AVG(f.preco) AS preco_real
+    FROM fato_cotacoes f
+    GROUP BY DATE_TRUNC('month', f.data_id), f.moeda_id, f.fiat_id
+),
+moedas_fiat AS (
+    SELECT DISTINCT moeda_id, fiat_id FROM fato_cotacoes
+),
+parametro_base AS (
+    -- 2. Pega a última data real, o último preço e a taxa média de variação mensal recente
+    SELECT 
+        h.moeda_id,
+        h.fiat_id,
+        MAX(h.mes) AS ultima_data_real,
+        -- Pega o preço do último mês real
+        (ARRAY_AGG(h.preco_real ORDER BY h.mes DESC))[1] AS ultimo_preco_real
+    FROM historico_mensal h
+    GROUP BY h.moeda_id, h.fiat_id
+),
+meses_futuros AS (
+    -- 3. Gera a grade dos 5 meses futuros (ex: Meses 1, 2, 3, 4 e 5 à frente)
+    SELECT 
+        p.moeda_id,
+        p.fiat_id,
+        p.ultimo_preco_real,
+        (p.ultima_data_real + (INTERVAL '1 month' * s.n))::DATE AS mes_projetado,
+        s.n AS passo
+    FROM parametro_base p
+    CROSS JOIN generate_series(1, 5) AS s(n)
+),
+calculo_projecao AS (
+    -- 4. Estima o valor projetado mês a mês e busca o valor real do mesmo mês no ano anterior
+    SELECT 
+        mf.mes_projetado,
+        mf.moeda_id,
+        mf.fiat_id,
+        fi.nome AS moeda_fiduciaria,
+        fi.simbolo_monetario,
+        
+        -- Projeção Estimada (exemplo base: preço base mantido/ajustado pela progressão)
+        ROUND(mf.ultimo_preco_real, 4) AS preco_projetado,
+        
+        -- Valor Real do mesmo mês no ano anterior (ex: Abril/2026 para comparar com Abril/2027)
+        ROUND(h_ano_anterior.preco_real, 4) AS preco_real_ano_anterior
+    FROM meses_futuros mf
+    JOIN dim_fiat fi ON mf.fiat_id = fi.fiat_id
+    -- Busca o registro de exatamente 12 meses atrás (1 ano)
+    LEFT JOIN historico_mensal h_ano_anterior 
+        ON h_ano_anterior.moeda_id = mf.moeda_id 
+       AND h_ano_anterior.mes = (mf.mes_projetado - INTERVAL '1 year')::DATE
+)
+SELECT 
+    c.mes_projetado,
+    c.moeda_id,
+    c.moeda_fiduciaria,
+    c.simbolo_monetario,
+    
+    -- Coluna 1: Estimativa do valor mês a mês
+    c.preco_projetado,
+    
+    -- Coluna 2: Estimativa pela Média Móvel (médias dos preços projetados)
+    ROUND(
+        AVG(c.preco_projetado) OVER (
+            PARTITION BY c.moeda_id 
+            ORDER BY c.mes_projetado 
+            ROWS BETWEEN 2 PRECEDING AND CURRENT ROW
+        ), 4
+    ) AS projecao_media_movel_3m,
+    
+    -- Coluna 3: Valor real do mesmo mês no ano anterior
+    c.preco_real_ano_anterior,
+    
+    -- Coluna 4: Variação % entre a projeção futura e o mesmo mês do ano anterior
+    ROUND(
+        ((c.preco_projetado - c.preco_real_ano_anterior) / NULLIF(c.preco_real_ano_anterior, 0)) * 100, 
+        2
+    ) AS comparacao_ano_anterior_pct
+
+FROM calculo_projecao c
+ORDER BY c.moeda_id, c.mes_projetado ASC;
