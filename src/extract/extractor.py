@@ -34,7 +34,7 @@ logging.basicConfig(
 )
 
 logging.info("Iniciando verificação de carga incremental...")
-print("🚀 Iniciando verificação de carga incremental...")
+print("Iniciando verificação de carga incremental...")
 
 # ==========================================
 # 3. CONEXÃO COM O POSTGRESQL
@@ -72,7 +72,7 @@ except Exception as e:
     logging.warning(f"Não foi possível consultar a última data na stage: {e}")
 
 if ultima_data_str:
-    print(f"📅 ÚLTIMA DATA ENCONTRADA NO BANCO: {ultima_data_str}")
+    print(f"ÚLTIMA DATA ENCONTRADA NO BANCO: {ultima_data_str}")
     logging.info(f"Última data encontrada na stage: {ultima_data_str}")
     
     # Define os dias a buscar com base na diferença até hoje
@@ -82,7 +82,7 @@ if ultima_data_str:
     # Se a base já está atualizada para o dia de hoje, busca apenas o último dia por segurança
     dias_busca = str(max(dias_diferenca + 1, 2))
 else:
-    print("⚠️ NENHUM DADO ANTERIOR ENCONTRADO. REALIZANDO CARGA COMPLETA (365 DIAS).")
+    print("NENHUM DADO ANTERIOR ENCONTRADO. REALIZANDO CARGA COMPLETA (365 DIAS).")
     logging.info("Carga inicial de 365 dias acionada.")
     dias_busca = "365"
 
@@ -136,7 +136,7 @@ for moeda in MOEDAS:
             
     except Exception as erro:
         logging.error(f"Erro ao buscar dados de {moeda}: {erro}")
-        print(f"❌ Erro na moeda {moeda}: {erro}")
+        print(f"Erro na moeda {moeda}: {erro}")
     
     time.sleep(2)
 
@@ -159,15 +159,15 @@ if TODOS_OS_DADOS:
             index=False
         )
         
-        mensagem_sucesso = f"✅ SUCESSO! {len(df)} novos registros inseridos na stage.stg_cotacoes!"
+        mensagem_sucesso = f"SUCESSO! {len(df)} novos registros inseridos na stage.stg_cotacoes!"
         print(mensagem_sucesso)
         logging.info(mensagem_sucesso)
 
     except Exception as erro:
-        mensagem_erro = f"❌ ERRO ao salvar no banco: {erro}"
+        mensagem_erro = f"ERRO ao salvar no banco: {erro}"
         print(mensagem_erro)
         logging.error(mensagem_erro)
 else:
-    mensagem_sem_dados = "ℹ️ Nenhum dado novo para inserir. A base já está atualizada com as datas mais recentes!"
+    mensagem_sem_dados = "Nenhum dado novo para inserir. A base já está atualizada com as datas mais recentes!"
     print(mensagem_sem_dados)
     logging.info(mensagem_sem_dados)
