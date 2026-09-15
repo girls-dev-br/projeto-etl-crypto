@@ -1,22 +1,39 @@
-# ETL de Criptomoedas
+# 🪙 Pipeline de ETL & Analytics de Criptomoedas
 
-Pipeline de ETL (Extract, Transform, Load) que extrai dados de criptomoedas 
-da API CoinGecko, transforma os dados e carrega em um mini Data Warehouse no PostgreSQL.
+Pipeline completo de Engenharia e Business Analytics (Extract, Transform, Load) que extrai dados históricos de criptoativos via API, realiza o tratamento e modelagem dimensional em um banco de dados relacional e entrega insights estratégicos em um painel interativo no Power BI.
 
-## Tecnologias utilizadas
+---
 
-- Python
-- Pandas
-- SQLAlchemy
-- API CoinGecko
-- PostgreSQL
+## 📸 1. Visualização do Dashboard Executivo
 
-## Funcionalidades
+> 💡 **Dica de Visualização:** Como os arquivos `.pbix` não são renderizados diretamente no navegador, veja abaixo a captura de tela do ambiente analítico finalizado. O arquivo original está disponível na raiz deste repositório para download local.
 
-- Extração de dados de mercado de criptomoedas via API
-- Transformação e tratamento dos dados
-- Carga em banco de dados relacional
-- Testes automatizados
+![Dashboard Crypto](https://githubusercontent.com)
+
+---
+
+## 🎯 2. Escopo do Projeto & Solução de Negócio
+O objetivo principal deste projeto é monitorar e prospectar o comportamento dos dois principais criptoativos do mercado global: **Bitcoin (BTC)** e **Ethereum (ETH)**. 
+
+A solução resolve o problema de consolidação de dados fragmentados, centralizando históricos e projeções em uma única base de dados estruturada para análise macroeconômica e tomada de decisão corporativa utilizando a moeda padrão internacional (**Dólar Americano - USD**).
+
+## 🛠️ 3. Tecnologias Utilizadas
+* **Linguagem Principal:** Python 3 (Scripts de automação)
+* **Manipulação de Dados:** Pandas
+* **Carga e ORM:** SQLAlchemy
+* **Fonte de Dados:** CoinGecko API (Dados públicos de mercado)
+* **Banco de Dados (Data Warehouse):** PostgreSQL hospedado em nuvem (NeonDB)
+* **Business Intelligence:** Power BI Desktop (Modelagem e UX/UI)
+
+## 🗃️ 4. Modelagem do Banco & Camada Semântica (Views SQL)
+Para alimentar o dashboard de forma otimizada e performática, o modelo de BI consome dados refinados diretamente de 5 Views SQL estratégicas criadas no banco de dados:
+
+1. `public.vw_12_meses_com_projecao`: Consolida o histórico temporal das cotações de fechamento diário do último ano.
+2. `public.vw_analitica_dia_semana`: Calcula o preço médio e volume médio negociado por cada dia da semana para identificar padrões de volatilidade.
+3. `public.vw_projecoes_5_dias`: Armazena os cálculos matemáticos de tendência futura para o curto prazo.
+4. `public.vw_fato_cotacoes_analitica`: Tabela fato principal do modelo com métricas de volume spot e capitalização de mercado (Market Cap).
+5. `public.vw_analitica_resumo_mensal`: Agrupa os fechamentos consolidados por mês e ano (Média, Máxima e Mínima histórica).
+
 
 ## Estrutura do projeto
 ```
