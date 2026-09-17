@@ -79,14 +79,32 @@ python src/main.py
 
 ## 📸 Demonstração
 
-### 1. Extração dos dados (staging)
-![Extração](./docs/fotos-processo/extracao_bruta.jpeg)
-Coleta dos dados brutos da API CoinGecko e carga incremental dos últimos 12 meses até 5 dias posteriores ao ínicio na tabela `stg_cotacoes` .
+O pipeline foi validado em ambiente de desenvolvimento, cobrindo desde a coleta bruta até a estruturação analítica final.
 
-![Extração](./docs/fotos-processo/extracao_auto.jpeg)
-Coleta dos dados brutos da API CoinGecko e carga automatizada com agendador na tabela `stg_cotacoes`.
+### 1. Extração e Carga Incremental (Staging)
+* **Processamento Bruto:** Coleta automatizada de dados históricos diretamente da API CoinGecko para a tabela `stg_cotacoes`.
+![Extração Bruta](./docs/fotos-processo/extracao_bruta.jpeg)
 
+* **Automação de Carga:** Script executado via agendador de tarefas garantindo a carga incremental dos últimos 12 meses mais projeções.
+![Extração Automatizada](./docs/fotos-processo/extracao_auto.jpeg)
 
-## Autoras
+### 2. Camada Semântica & Modelagem Relacional
+Para alimentar o ambiente do Power BI, o banco consome os dados transformados por meio das 5 views estruturadas:
+* `public.vw_12_meses_com_projecao`
+* `public.vw_analitica_dia_semana`
+* `public.vw_projecoes_5_dias`
+* `public.vw_fato_cotacoes_analitica`
+* `public.vw_analitica_resumo_mensal`
 
-Projeto desenvolvido por Bianca Pena, Paula Carvalho, Paula Cristine e Sara Trindade.
+---
+
+## 👩‍💻 Autoras
+
+Unimos nossas habilidades para construir esta solução de ponta a ponta. Conecte-se conosco:
+
+| Autora | LinkedIn | GitHub |
+| :--- | :---: | :---: |
+| **Paula Carvalho** | [![LinkedIn](https://shields.io)](https://www.linkedin.com/in/paula-carvalho-390147108/) | [![GitHub](https://shields.io)](https://github.com/paulahcarvalho) |
+| **Bianca Pena** | [![LinkedIn](https://shields.io)](https://linkedin.com) | [![GitHub](https://shields.io)](https://github.com/BiaPena-br) |
+| **Sara Trindade** | [![LinkedIn](https://shields.io)](https://www.linkedin.com/in/sara0333/) | [![GitHub](https://shields.io)](https://github.com/saradataeng) |
+| **Paula Cristine** | `-` | [![GitHub](https://shields.io)](https://github.com/paulinhacelebrai) |
