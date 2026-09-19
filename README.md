@@ -96,15 +96,27 @@ Para alimentar o ambiente do Power BI, o banco consome os dados transformados po
 * `public.vw_fato_cotacoes_analitica`
 * `public.vw_analitica_resumo_mensal`
 
+### 3. Execução do Pipeline ETL
+
+![Execução do Pipeline ETL](docs/fotos-processo/Pipeline.jpeg)
+
+*Registo de logs do terminal demonstrando o fluxo completo de dados:*
+- **Extração:** Verificação de carga incremental e validação de dados recentes da API.
+- **Transformação:** Aplicação de regras de negócio, validação de 1.548 registos e ausência de falhas na camada *stage*.
+- **Carga (Load):** Povoamento com sucesso do esquema em estrela (`dim_fiat`, `dim_moeda`, `dim_tempo` e `fato_cotacoes`) no Neon PostgreSQL.
 ---
 
 ## 👩‍💻 Autoras
 
 Unimos nossas habilidades para construir esta solução de ponta a ponta. Conecte-se conosco:
 
+### 👥 Autorasi
+
+### 👥 Autorasi
+
 | Autora | LinkedIn | GitHub |
 | :--- | :---: | :---: |
-| **Paula Carvalho** | [![LinkedIn](https://shields.io)](https://www.linkedin.com/in/paula-carvalho-390147108/) | [![GitHub](https://shields.io)](https://github.com/paulahcarvalho) |
-| **Bianca Pena** | [![LinkedIn](https://shields.io)](https://linkedin.com) | [![GitHub](https://shields.io)](https://github.com/BiaPena-br) |
-| **Sara Trindade** | [![LinkedIn](https://shields.io)](https://www.linkedin.com/in/sara0333/) | [![GitHub](https://shields.io)](https://github.com/saradataeng) |
-| **Paula Cristine** | `-` | [![GitHub](https://shields.io)](https://github.com/paulinhacelebrai) |
+| **Paula Carvalho** | [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/paula-carvalho-390147108/) | [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/paulahcarvalho) |
+| **Bianca Pena** | [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com) | [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/BiaPena-br) |
+| **Sara Trindade** | [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sara0333/) | [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/saradataeng) |
+| **Paula Cristine** | `-` | [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/paulinhacelebrai) |
