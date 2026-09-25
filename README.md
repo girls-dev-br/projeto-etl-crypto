@@ -3,10 +3,46 @@
 Pipeline completo de Engenharia e Business Analytics (Extract, Transform, Load) que extrai dados históricos de criptoativos via API, realiza o tratamento e modelagem dimensional em um banco de dados relacional e entrega insights estratégicos em um painel interativo no Power BI.
 
 ---
+## 📊 Business Intelligence & Dashboard Interativo (Power BI)
 
-## 📸 1. Visualização do Dashboard Executivo
+A camada analítica do projeto foi estruturada no **Microsoft Fabric / Power BI**, consumindo diretamente as views modeladas no banco de dados analítico. O painel foi concebido para atender tanto à análise tática quanto à tomada de decisão operacional sobre o mercado de criptoativos, com foco principal em **Bitcoin (BTC)** e **Ethereum (ETH)**.
 
-> 💡 **Dica de Visualização:** Como os arquivos `.pbix` não são renderizados diretamente no navegador, veja abaixo a captura de tela do ambiente analítico finalizado. O arquivo original está disponível na raiz deste repositório para download local.
+---
+
+### 🧠 Modelagem Semântica e Relacionamentos
+
+Para garantir integridade analítica e evitar a necessidade de filtros redundantes na interface, o modelo semântico foi consolidado conectando as views analíticas em formato de estrela/floco adaptado:
+
+* **Tabela Central de Cotações:** `vw_12_meses_com_projecao` atua como hub relacional primário para as séries temporais.
+* **Propagação de Filtro Bidirecional:** Relações com cardinalidade muitos-para-muitos (`*:*`) e filtro cruzado bidirecional ativo conectam as tabelas auxiliares (`vw_analitica_dia_semana`, `vw_analitica_resumo_mensal` e `vw_projecoes_5_dias`).
+* **Sincronismo Global:** Um seletor de ativo unificado comanda instantaneamente todos os visuais da página (preços, projeções, ranges e volatilidade).
+
+---
+
+### 🖥️ Estrutura e Métricas do Painel
+
+O dashboard está organizado em quatro quadrantes de análise contínua:
+
+#### 1. Cabeçalho Executivo e KPIs de Topo
+* **Seletor de Moeda:** Alternância rápida entre **Bitcoin** e **Ethereum**.
+* **Preço Médio BRL / USD:** Cartões de destaque que consolidam o preço médio registrado no período, permitindo a leitura instantânea tanto no contexto nacional (conversão cambial) quanto internacional (dólar).
+* **Navegador de Moedas (Alternância Dinâmica):** Mecanismo via *Bookmarks/Indicadores* que permite alternar os gráficos entre as unidades monetárias **BRL** e **USD** de forma limpa e sem duplicar páginas.
+
+#### 2. Tendência Histórica & Análise Técnica
+* **Cotação Histórica Diária:** Curva de preços contínua cobrindo o histórico de negociação de 12 meses.
+* **Médias Móveis e Tendência:** Linha temporal com sobreposição de preço diário e **Média Móvel de 7 dias (`media_movel_7d_usd`)**, fornecendo sinalização de tendências e atenuação de ruídos de curto prazo.
+* **Projeção Preditiva (5 Dias):** Gráfico de linha suavizado com preenchimento em degradê, alimentado pela view `vw_projecoes_5_dias`, apresentando a estimativa de preço para as datas subsequentes.
+
+#### 3. Padrões de Mercado & Sazonalidade
+* **Média por Dia da Semana:** Gráfico de colunas clusterizadas categorizado por dia da semana (`dia_semana`), isolando o comportamento de liquidez e precificação nos dias úteis vs. finais de semana.
+* **Banda de Preço (Range Histórico Mín/Máx):** Análise de volatilidade mensal comparando as colunas `preco_min` e `preco_max` para mapear os tetos e pisos históricos de suporte e resistência do ativo.
+
+#### 4. Indicadores de Risco e Liquidez
+* **Índice de Liquidez:** Medidor em rosca baseado no volume total acumulado/médio negociado (`volume_total_usd` / `market_cap`).
+* **Volatilidade Diária:** Identificação de picos de estresse no ativo através da distribuição da variação percentual diária (`variacao_percentual_diaria`).
+
+---
+
 
 ![Dashboard Crypto](https://githubusercontent.com)
 
