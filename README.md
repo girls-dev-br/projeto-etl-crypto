@@ -146,10 +146,9 @@ Para alimentar o ambiente do Power BI, o banco consome os dados transformados po
 
 Unimos nossas habilidades para construir esta solução de ponta a ponta. Conecte-se conosco:
 
-
-| Nome  | LinkedIn | GitHub |
-| :--- | :---: | :---: |
-| **Paula Carvalho** | [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/paula-carvalho-390147108/) | [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/paulahcarvalho) |
-| **Bianca Pena** | [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com) | [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/BiaPena-br) |
-| **Sara Trindade** | [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sara0333/) | [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/saradataeng) |
-| **Paula Cristine** | `-` | [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/paulinhacelebrai) |
+| Foto | Nome | Papel / Responsabilidade | LinkedIn | GitHub |
+| :---: | :--- | :--- | :---: | :---: |
+| <img src="docs/fotos-integrantes/Bianca.png" width="80" style="border-radius:50%"> | **Bianca Pena** | Arquitetura de Dados, Cloud AWS & Extração | [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com) | [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/BiaPena-br) |
+| <img src="docs/fotos-integrantes/Paula%20Carvalho.png" width="80" style="border-radius:50%"> | **Paula Carvalho** | Regras de Negócio, Transformação de Dados & PO/PM | [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/paula-carvalho-390147108/) | [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/paulahcarvalho) |
+| <img src="docs/fotos-integrantes/Paula%20Cristine.png" width="80" style="border-radius:50%"> | **Paula Cristine** | Banco de Dados & Modelagem *(apoio/aprendizado)* | `-` | [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/paulinhacelebrai) |
+| <img src="docs/fotos-integrantes/Sara.png" width="80" style="border-radius:50%"> | **Sara Trindade** | Transformação, Consultas SQL & Análise de Dados | [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sara0333/) | [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/saradataeng) |
