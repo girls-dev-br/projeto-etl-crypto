@@ -43,9 +43,11 @@ O dashboard está organizado em quatro quadrantes de análise contínua:
 * **Volatilidade Diária:** Identificação de picos de estresse no ativo através da distribuição da variação percentual diária (`variacao_percentual_diaria`).
 
 ---
+### 🖥️ Demonstração Interativa do Dashboard
 
-![Dashboard Crypto](https://githubusercontent.com)
+[<img src="docs/dashboard/Animação.gif" alt="Demonstração do Dashboard" width="100%">](docs/dashboard/Animação.gif)
 
+> 💡 *Dica: Clique no GIF para expandir em tela cheia.*
 ---
 
 ## 🎯 2. Escopo do Projeto & Solução de Negócio
@@ -76,7 +78,6 @@ Para alimentar o dashboard de forma otimizada e performática, o modelo de BI co
 projeto-etl-crypto/
 ├── sql/            # scripts de criação de tabelas e views
 ├── src/            # código fonte do ETL
-├── tests/          # testes automatizados
 ├── docs/           # documentação adicional
 ├── config/         # configurações do projeto
 ├── requirements.txt
@@ -110,7 +111,7 @@ cp .env.exemplo .env
 
 5. Execute o projeto
 ```bash
-python src/main.py
+python src
 ```
 
 ## 📸 Demonstração
