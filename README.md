@@ -58,7 +58,7 @@ A solução resolve o problema de consolidação de dados fragmentados, centrali
 ## 🛠️ 3. Tecnologias Utilizadas
 * **Linguagem Principal:** Python 3 (Scripts de automação)
 * **Manipulação de Dados:** Pandas
-* **Carga e ORM:** SQLAlchemy
+* **Carga no banco:** SQLAlchemy
 * **Fonte de Dados:** CoinGecko API (Dados públicos de mercado)
 * **Banco de Dados (Data Warehouse):** PostgreSQL hospedado em nuvem (NeonDB)
 * **Business Intelligence:** Power BI Desktop (Modelagem e UX/UI)
